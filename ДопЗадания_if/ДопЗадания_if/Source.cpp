@@ -25,21 +25,6 @@ int main()
 		else
 			cout << "the biggest number is " << z;
 	
-	int x, y, z;
-	cout << "Enter number x: ";
-	cin >> x;
-	cout << "Enter number y: ";
-	cin >> y;
-	cout << "Enter number z: ";
-	cin >> z;
-	if (x > y && x > z)
-		cout << "the biggest number is " << x;
-	else
-		if (y > z){
-			cout << "the biggest number is " << y;}
-		else{
-			cout << "the biggest number is " << z;}
-	
 	2.	Проверить, принадлежит ли число интервалу (–5, 3).
 	
 	int x;
@@ -50,9 +35,9 @@ int main()
 	else
 		cout << "No, number x doesn't belong to this line";
 
-	3.	Даны три вещественных числа a, b, c. Проверить:	 a < b < c;	b > a > c.
+	3.	Даны три вещественных числа a, b, c. Проверить:	 x < y < z;	y > x > z.
 	
-	int x, y, z;
+	double x, y, z;
 	cout << "Enter number x: ";
 	cin >> x;
 	cout << "Enter number y: ";
@@ -64,14 +49,14 @@ int main()
 	else
 		cout << "No, you aren't right";
 	
-	int a,b,c;
-	cout << "Enter number a: ";
-	cin >> a;
-	cout << "Enter number b: ";
-	cin >> b;
-	cout << "Enter number c: ";
-	cin >> c;
-	if (b > a && a > c)
+	double x, y, z;
+	cout << "Enter number x: ";
+	cin >> x;
+	cout << "Enter number y: ";
+	cin >> y;
+	cout << "Enter number z: ";
+	cin >> z;
+	if (y > x && x > z)
 		cout << "You are right";
 	else
 		cout << "No, you aren't right";
@@ -206,12 +191,12 @@ int main()
 					cout << x << " " << z << " " << y;
 			}
 			else
-				cout << "fuck";
+				cout << "wrong ";
 		}
 	}
 	
 	
-	if (x>y && x>z)
+	if (x > y && x > z)
 		if(y>z)
 			cout << z << " " << y << " " << x;
 		else
@@ -243,14 +228,266 @@ int main()
 	Високосным считается год, делящийся на 4, за исключением тех годов, которые делятся на
 	100 и не делятся на 400 (например, годы 300, 1300 и 1900 не являются високосными,
 	а 1200 и 2000 — являются).
-	*/ ;
+	
 	int x;
 	cin >> x;
 	if (x % 4 == 0 && !(x % 100 == 0 && x % 400 != 0))
 		cout << "visokosniy";
 	else
 		cout << "ne visokosniy";
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+
+	33.	Вычислите  , если  и  вводит пользователь. Перед вычислением выполнить проверку на
+	существование квадратных корней.
+											КАК ПРАВИЛЬНО?
+	int x, y;
+	cout << "Enter number x: ";
+	cin >> x;
+	cout << "Enter number y: ";
+	cin >> y;
+	if (x%(int)sqrt(x)==0 && y%(int)sqrt(y)==0)
+		cout << sqrt(x-sqrt(y));
+	else 
+		cout << " wrong ";
+
+	34.	 Дано число. Если оно меньше 7, то вывести "да", если больше 10, то вывести "нет",
+	если равно 9, то вывести "ошибка".
+	
+	int x;
+	cout << "Enter number x: ";
+	cin >> x;
+	if (x < 7)
+		cout << "Yes";
+	if (x > 10)
+		cout << "No";
+	if (x = 9)
+		cout << "Error";
+
+	35.	Пользователь вводит три числа. Если все числа больше 10 и первые два числа делятся на 3,
+	то вывести "да", иначе "нет"
+	
+	int x, y, z;
+	cout << "Enter number x: ";
+	cin >> x;
+	cout << "Enter number y: ";
+	cin >> y;
+	cout << "Enter number z: ";
+	cin >> z;
+	if (x > 10 && y > 10 && z > 10 && x % 3 == 0 && y % 3 == 0)
+		cout << "Yes";
+	else
+		cout << "No";
+
+	36.	Пользователь вводит три числа. Найти сумму тех чисел, которые делятся на 5. Если таких 
+	чисел нет, то вывести "ошибка".
+	
+	int x, y, z;
+	cout << "Enter number x: ";
+	cin >> x;
+	cout << "Enter number y: ";
+	cin >> y;
+	cout << "Enter number z: ";
+	cin >> z;
+	if (x%5==0 && y % 5 != 0 && z % 5 != 0)
+		cout << "Sum of numbers is " << x;
+	if (x % 5 != 0 && y % 5 == 0 && z % 5 != 0)
+		cout << "Sum of numbers is " << y;
+	if (x % 5 != 0 && y % 5 != 0 && z % 5 == 0)
+		cout << "Sum of numbers is " << z;
+	if (x % 5 == 0 && y % 5 == 0 && z % 5 != 0)
+		cout << "Sum of numbers is " << x + y;
+	if (x % 5 == 0 && y % 5 != 0 && z % 5 == 0)
+		cout << "Sum of numbers is " << x + z;
+	if (x % 5 != 0 && y % 5 == 0 && z % 5 == 0)
+		cout << "Sum of numbers is " << y + z;
+	if (x % 5 == 0 && y % 5 == 0 && z % 5 == 0)
+		cout << "Sum of numbers is " << x + y + z;
+	if (x % 5 != 0 && y % 5 != 0 && z % 5 != 0)
+		cout << "Error";
+	
+	37.	Даны три числа. Написать "да", если среди них есть одинаковые.
+	
+	int x, y, z;
+	cout << "Enter number x: ";
+	cin >> x;
+	cout << "Enter number y: ";
+	cin >> y;
+	cout << "Enter number z: ";
+	cin >> z;
+	if (x == y || y == z || x == z)
+		cout << "Yes";
+	else
+		cout << "No";
+
+	38.	Даны три числа. Написать "да", если можно взять какие-то два из них и в сумме получить 
+	третье.
+	
+	int x, y, z;
+
+	cout << "Enter number x: ";
+	cin >> x;
+	cout << "Enter number y: ";
+	cin >> y;
+	cout << "Enter number z: ";
+	cin >> z;
+	if (x + y == z || x + z == y || y + z == x)
+		cout << "Yes";
+	else
+		cout << "No";
+
+
+	39.	Дано три числа. Если ровно два из них  меньше 5, то вывести "да", иначе вывести "нет".
+	
+	int x, y, z;
+
+	cout << "Enter number x: ";
+	cin >> x;
+	cout << "Enter number y: ";
+	cin >> y;
+	cout << "Enter number z: ";
+	cin >> z;
+	if ((x < 5 && y < 5) || (x < 5 && z < 5) || (y < 5 && z < 5))
+		cout << "Yes";
+	else
+		cout << "No";
+
+	40.	Дано три числа. Найти количество положительных чисел среди них.
+	
+	int x, y, z;
+
+	cout << "Enter number x: ";
+	cin >> x;
+	cout << "Enter number y: ";
+	cin >> y;
+	cout << "Enter number z: ";
+	cin >> z;
+	if ((x>0 && y<0 && z<0) || (x < 0 && y > 0 && z < 0)|| (x < 0 && y < 0 && z > 0))
+		cout << "1";
+	if ((x > 0 && y > 0 && z < 0) || (x > 0 && y < 0 && z > 0) || (x < 0 && y > 0 && z > 0))
+		cout << "2";
+	if (x > 0 && y > 0 && z > 0)
+		cout << "3";
+	if (x < 0 && y < 0 && z < 0)
+		cout << "0";
+	
+
+	41.	Робот может перемещаться в четырех направлениях («11» — север, «12» — запад, «13» — юг, 
+	«14» — восток) и принимать три цифровые команды: 0 — продолжать движение, 1 — поворот налево,
+	–1 — поворот направо. Дано число (11, 12, 13 или 14) — исходное направление робота и целое
+	число N (0, 1 или -1) — посланная ему команда. Вывести направление робота после выполнения
+	полученной команды (то есть север, запад, юг или восток).
+	
+	int x, y;
+	cout << "Enter initial direction ";
+	cin >> x;
+	cout << "Enter instruction ";
+	cin >> y;
+
+	// For North (11)
+	if ((x == 11 && y == 0) || (x == 12 && y == -1) || (x == 14 && y == 1))
+		cout << "Robot goes to the North" << endl;
+	// For West (12)
+	if ((x == 12 && y == 0) || (x == 11 && y == 1) || (x == 13 && y == -1))
+		cout << "Robot goes to the West" << endl;
+	// For South (13)
+	if ((x == 13 && y == 0) || (x == 12 && y == 1) || (x == 14 && y == -1))
+		cout << "Robot goes to the South" << endl;
+	//For East (14)
+	if ((x == 14 && y == 0) || (x == 11 && y == -1) || (x == 13 && y == 1))
+		cout << "Robot goes to the East" << endl;
+	
+	42.	Дана дата из трех чисел (день, месяц и год). Вывести "да", если такая дата существует 
+	(например, 12 02 1999 - "да", 22 13 2001 - "нет"). Считать, что в феврале всегда 28 дней.
+	
+	int x, y, z;
+
+	cout << "Enter date x: ";
+	cin >> x;
+	cout << "Enter month y: ";
+	cin >> y;
+	cout << "Enter year z: ";
+	cin >> z;
+	
+	if (x < 32 && (y == 1 || y == 3 || y == 5 || y == 7 || y == 9 || y == 10 || y == 12))
+		cout << "This date " << x << ":" << y << ":" << z << " exists";
+		
+	if (x < 31 && (y == 4 || y == 6 || y == 9 || y == 11))
+		cout << "This date " << x << ":" << y << ":" << z << " exists";
+
+	if (x < 29 && y == 2)
+		cout << "This date " << x << ":" << y << ":" << z << " exists";
+
+	if (x>31 || y>12)
+		cout << "This date " << x << ":" << y << ":" << z << " doesn't exist";
+	
+	43.	Дано две даты, каждая из которых состоит из трех чисел (день, месяц и год). 
+	Вывести "да", если первая дата раньше второй, иначе вывести no.
+
+	int x, y, z, x1, y1, z1;
+	cout << "Enter first date:\n";
+	cout << "Day: ";
+	cin >> x;
+	cout << "Month: ";
+	cin >> y;
+	cout << "Year: ";
+	cin >> z;
+
+	cout << "Enter secod date:\n";
+	cout << "Day: ";
+	cin >> x1;
+	cout << "Month: ";
+	cin >> y1;
+	cout << "Year: ";
+	cin >> z1;
+
+	if (z < z1 || (y < y1 && z <= z1) || (x < x1 && y <= y1 && z <= z1))
+		cout << "First date is earlier than second";
+	else
+		cout << "First date IS NOT earlier than second";
+	
+	44.	Дано четырехзначное число. Верно ли, что цифры в нем расположены по убыванию? Например,
+	4311 - нет, 4321 - да, 5542 - нет, 5631 - нет, 9871 - да.
+	
+	int x;
+	cout << "Enter number x: ";
+	cin >> x;
+	if (((x / 1000) > (x % 1000 / 100)) && ((x % 1000 / 100) > (x % 100 / 10)) && (x % 100 / 10) > x % 10)
+		cout << "all numbers are in descending order";
+	else
+		cout << "They are not";
+
+	45.	Дано трехзначное число. Переставьте первую и последнюю цифры.
+	/*;
+	int x;
+	cout << "Enter number x: ";
+	cin >> x;
+	cout << x%10*100 + (x%100 - x%10) + x/100;
+
+	46.	Дано четырехзначное число. Определите, есть ли одинаковые цифры в нем.
+	
+	int x;
+	cout << "Enter number x: ";
+	cin >> x;
+	if (x / 1000 == x % 1000 / 100 || x / 1000 == x % 100 / 10 || x / 1000 == x % 10 || x % 1000 / 100 == x % 100 / 10 || x % 1000 / 100 == x % 10 || x % 100 / 10 == x % 10)
+		cout << "There are the same digits";
+	else
+		cout << "THERE ARENT";
+
+	47.	Дано пятизначное число. Цифры на четных позициях занулить. Например, из 12345 
+	получается число 10305.
+	int x;
+	cin >> x;
+	cout << (x / 10000 * 10000)+ ((x % 1000 / 100)*100) + (x % 10);
+	
+	48.	Даны два трехзначных числа. Найдите шестизначное число, образованное из двух данных
+	чисел путем дописывания второго числа к первому справа.
+	*/ ;
+	int x, y;
+	cin >> x >> y;
+	cout << x * 1000 + y;
 
 
 	return 0;
+
 }
